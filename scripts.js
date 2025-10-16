@@ -76,11 +76,17 @@ function finalizarPagamento() {
     return;
   }
 
+  if (!/^\d{4}\s?\d{4}\s?\d{4}\s?\d{4}$/.test(numero)) {
+  alert("❌ Número do cartão inválido. Use o formato 0000 0000 0000 0000.");
+  return;
+}
+
   // Simular verificação do cartão
   if (cvv.length !== 3 || isNaN(cvv)) {
     alert("❌ CVV inválido. Digite 3 números.");
     return;
   }
+  
 
   // Simulação de processamento de pagamento
   alert("💳 Processando pagamento...");
